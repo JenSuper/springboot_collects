@@ -25,7 +25,7 @@ import java.util.concurrent.TimeUnit;
  * Inc. All rights reserved.
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class RedisTest {
 
     @Autowired

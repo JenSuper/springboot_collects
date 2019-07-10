@@ -2,8 +2,7 @@ package com.jensuper.springboot.config.websocket;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.server.WebExceptionHandler;
-import org.springframework.web.socket.config.annotation.EnableWebSocket;
+import org.springframework.stereotype.Component;
 import org.springframework.web.socket.server.standard.ServerEndpointExporter;
 
 /**

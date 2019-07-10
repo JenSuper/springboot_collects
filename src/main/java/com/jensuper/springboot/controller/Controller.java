@@ -1,11 +1,12 @@
 package com.jensuper.springboot.controller;
 
 import com.jensuper.springboot.VO.User;
+import com.jensuper.springboot.config.ShutdownManager;
 import com.jensuper.springboot.exception.GlobException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 /**
  * All rights Reserved, Designed By www.rongdasoft.com
@@ -49,6 +50,15 @@ public class Controller {
     @GetMapping("/ex")
     public void ex() {
         throw new GlobException(1, "zero");
+    }
+
+    @Autowired
+    private ShutdownManager shutdownManager;
+
+    @GetMapping("/exit")
+    public void test(){
+        System.out.println("exit.....");
+        shutdownManager.initiateShutdown(-1);
     }
 
 }

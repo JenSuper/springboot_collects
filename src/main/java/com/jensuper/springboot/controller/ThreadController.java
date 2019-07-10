@@ -1,5 +1,7 @@
 package com.jensuper.springboot.controller;
 
+import com.google.gson.Gson;
+import com.jensuper.springboot.VO.User;
 import com.jensuper.springboot.service.ThreadAsyService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,5 +39,11 @@ public class ThreadController {
         log.info("taskManager - controller -------START------");
         threadAsyService.sycService();
         log.info("taskManager - controller -------EDN------");
+    }
+
+    @GetMapping("/voTest")
+    public String voTest() {
+        User user = new User(1,"小明");
+        return new Gson().toJson(user);
     }
 }

@@ -1,5 +1,6 @@
 package com.jensuper.springboot.VO;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 /**
@@ -16,8 +17,16 @@ import lombok.Data;
 @Data
 public class User {
 
-
+    @JsonProperty("用户id")
     private Integer id;
+    @JsonProperty("用户名")
     private String name;
 
+    public User() {
+    }
+
+    public User(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
 }

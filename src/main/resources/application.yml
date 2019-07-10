@@ -11,4 +11,4 @@ spring:
         max-idle: 8
         min-idle: 0
 server:
-  port: 8888
+  port: 8090
